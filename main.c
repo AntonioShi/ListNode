@@ -57,7 +57,7 @@ int ListInsert(SLNode *head, int i, DataType s){
     return 1 ;
 }
 
-int ListDelet(SLNode *head, int i, DataType *s){
+int ListDelete(SLNode *head, int i, DataType *s){
     SLNode *p, *q ;
     int j = -1 ;
 
@@ -127,12 +127,25 @@ int main(void) {
 
     }
 
-    ListDelet(head, 4, &s) ;
+    //ListDelete(head, 4, &s) ;
+
+    int n = ListLength(head) ;
+    printf("n = %4d\n", n) ;
+    for (i = 0; ListLength(head) > i; ++i) {
+        ListGet(head, i, &s) ;
+        printf("%d ", s) ;
+    }
+    printf("\n") ;
+    ListDelete(head, 4, &s) ;
+
+    n = ListLength(head) ;
+    printf("n = %4d\n", n) ;
 
     for (i = 0; ListLength(head) > i; ++i) {
         ListGet(head, i, &s) ;
         printf("%d ", s) ;
     }
+    printf("\n") ;
 
     Destroy(&head) ;
 
