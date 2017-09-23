@@ -25,7 +25,7 @@ void ListInitiate(SLNode **head){
 int ListLength(SLNode *head){
     SLNode *p = head ;
     int size = 0 ;
-    while (p != NULL){
+    while (p->next != NULL){
         p = p->next ;
         size ++ ;
     }
